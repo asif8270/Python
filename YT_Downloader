@@ -1,0 +1,16 @@
+from pytube import YouTube // importing package
+
+def download(link):  // definig a downloader function
+    YT = YouTube(link)
+    YT = YT.streams.get_highest_resolution()
+
+// Error handling
+
+    try:  
+        YT.download()
+    except:
+        print("Error downloading your video!!")
+    print("Your video has been downloaded!!")
+
+link = input("Put your link here. URL: ")  // Put the required video link here
+download(link)  // function call
